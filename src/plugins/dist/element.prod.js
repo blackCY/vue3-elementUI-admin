@@ -1,0 +1,1 @@
+"use strict";var _vue=_interopRequireDefault(require("vue")),_elementUi=require("element-ui");function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}_vue.default.use(_elementUi.Button),_vue.default.use(_elementUi.Form),_vue.default.use(_elementUi.FormItem),_vue.default.use(_elementUi.Input),_vue.default.use(_elementUi.Row),_vue.default.use(_elementUi.Col);
