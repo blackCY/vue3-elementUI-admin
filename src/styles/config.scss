@@ -1,0 +1,20 @@
+$navMenu: 200px; // 后台管理菜单宽度
+$navMenuMin: 64px;
+
+$--color-bgc: #409eff !default; // Login Page 背景色
+$--color-red: rgb(255, 123, 123) !default;
+$--color-mainColor: #f56c6c;
+
+$--color-success: #67c23a !default;
+$--color-warning: #e6a23c !default;
+$--color-danger: #f56c6c !default;
+$--color-info: #a0aecc !default;
+
+// 兼容前缀封装
+@mixin webkit($type, $value) {
+  -webkit-#{$type}: $value;
+  -moz-#{$type}: $value;
+  -o-#{$type}: $value;
+  -ms-#{$type}: $value;
+  #{$type}: $value;
+}

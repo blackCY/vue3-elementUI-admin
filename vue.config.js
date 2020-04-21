@@ -1,5 +1,8 @@
 const path = require('path');
 
+// 你可以在 vue.config.js 文件中计算环境变量, 它们仍然需要以 VUE_APP_ 前缀开头, 这可以用于版本信息:
+process.env.VUE_APP_VERSION = require('./package.json').version;
+
 module.exports = {
   // 基本路径
   publicPath: process.env.NODE_ENV === 'production' ? '' : '/',
@@ -9,15 +12,26 @@ module.exports = {
   assetsDir: 'assets',
   // eslint-loader 是否在保存时检查
   lintOnSave: true, // 默认 true
+  // webpack 的配置
   chainWebpack: config => {
     // alias
     // config.resolve.alias.set('@', resolve('./src'));
+    const svgRule = config.module.rule('svg');
+    svgRule.uses.clear(); // 此操作时将 webpack 默认的 svg 处理清除掉, 也可以使用 config.module.rule.delete('svg');
+    svgRule
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]',
+        include: ['./src/icons'],
+      });
   },
   configureWebpack: config => {
     // 配置解析别名
     config.resolve = {
       extensions: ['.js', '.json', '.vue'],
       alias: {
+        vue: 'vue/dist/vue.js', // 重新指向 vue 文件的位置, 即更改编译模式
         '@': path.resolve(__dirname, './src'),
         '@views': path.resolve(__dirname, './src/views'),
         public: path.resolve(__dirname, './public'),
@@ -71,7 +85,15 @@ module.exports = {
     https: false, // 失败时刷新页面
     hot: true,
     hotOnly: false,
-    // proxy: {}, // 设置代理
+    proxy: {
+      '/api': {
+        target: 'http://rap2.taobao.org:38080/app/mock/251325',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '',
+        },
+      },
+    },
     // 全屏模式下是否显示错误
     overlay: {
       warnings: true,
