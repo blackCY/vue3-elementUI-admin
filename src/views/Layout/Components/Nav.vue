@@ -18,9 +18,11 @@
             <span slot="title">{{ item.meta.name }}</span>
           </template>
 
-          <el-menu-item v-for="subItem in item.children" :index="subItem.path" :key="subItem.path">
-            {{ subItem.meta.name }}
-          </el-menu-item>
+          <template v-for="subItem in item.children">
+            <el-menu-item :index="subItem.path" :key="subItem.path" v-if="!subItem.hidden">
+              {{ subItem.meta.name }}
+            </el-menu-item>
+          </template>
         </el-submenu>
       </template>
     </el-menu>
@@ -58,11 +60,12 @@ export default {
   height: 100vh;
   width: $navMenu;
   background-color: #344a5f;
-  @include webkit(transition, all 0.3s ease 0s);
+  @include webkit(transition, all 0.3s ease 0s !important);
   svg {
     font-size: 20px;
     margin-right: 10px;
   }
+  @include webkit(z-index, 999 !important);
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: $navMenu;
@@ -73,7 +76,7 @@ export default {
   img {
     margin: 10px auto 15px;
     width: 92px;
-    @include webkit(transition, all 0.3s ease 0s);
+    @include webkit(transition, all 0.3s ease 0s !important);
   }
 }
 .open {

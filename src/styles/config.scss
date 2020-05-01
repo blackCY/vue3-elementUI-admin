@@ -18,3 +18,39 @@ $--color-info: #a0aecc !default;
   -ms-#{$type}: $value;
   #{$type}: $value;
 }
+
+@mixin labelDom($align, $width, $line-height: 'normal') {
+  /deep/label {
+    float: left;
+    width: $width;
+    text-align: $align;
+    line-height: $line-height;
+  }
+  /deep/.wrap-content {
+    margin-left: $width;
+    background-color: #ccc;
+  }
+}
+/deep/.label-wrap {
+  &.category {
+    @include labelDom(left, 60px, 40px);
+  }
+  &.date {
+    @include labelDom(right, 93px, 40px);
+  }
+  &.key-work {
+    @include labelDom(right, 99px, 40px);
+  }
+}
+
+/deep/.el-table .el-table__row .cell li {
+  list-style-type: none;
+  background-color: transparent !important;
+  text-decoration: none !important;
+  color: rgb(240, 95, 95) !important;
+  &:hover {
+    color:  red !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+  }
+}

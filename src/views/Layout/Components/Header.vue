@@ -9,7 +9,7 @@
         <el-avatar style="margin-right: 10px; cursor: pointer;" size="small" icon="el-icon-user-solid" />
         {{ username }}
       </div>
-      <div class="header-icon pull-left">
+      <div class="header-icon pull-left" @click="logout">
         <svg-icon iconClass="exit" className="exit" style="font-size: 20px;" slot="reference" />
       </div>
     </div>
@@ -29,13 +29,12 @@ export default {
     };
     // 登出
     const logout = () => {
+      root.$router.push({
+        name: 'Login',
+      });
       root.$store
         .dispatch(`login/${LOGOUT}`)
-        .then(() => {
-          root.$router.push({
-            name: 'Login',
-          });
-        })
+        .then(() => {})
         .catch(err => {});
     };
     return {

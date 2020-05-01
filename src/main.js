@@ -45,6 +45,12 @@ Vue.config.productionTip = false;
  */
 Vue.use(VueCompositionAPI);
 
+/**
+ * 注入自定义全局方法
+ */
+// import _global from './utils/global';
+// Vue.use(_global);
+
 new Vue({
   router,
   store,

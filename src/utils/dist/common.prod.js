@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.common=common;var _news=require("../api/news");function common(){return function(){(0,_news.GetCategory)({}).then(function(e){}).catch(function(e){})}}

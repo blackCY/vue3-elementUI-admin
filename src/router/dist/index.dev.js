@@ -102,6 +102,18 @@ var routes = [{
         return _interopRequireWildcard(require('@views/Info/Category'));
       });
     }
+  }, {
+    path: '/info/infoDetail/:currentTotal/:infoID',
+    name: 'infoDetail',
+    meta: {
+      name: '信息详情'
+    },
+    hidden: true,
+    component: function component() {
+      return Promise.resolve().then(function () {
+        return _interopRequireWildcard(require('@views/Info/infoDetail'));
+      });
+    }
   }]
 },
 /**

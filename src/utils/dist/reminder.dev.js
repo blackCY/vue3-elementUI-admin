@@ -12,7 +12,7 @@ var _default = function _default(_ref) {
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'info' : _ref$type,
       _ref$duration = _ref.duration,
-      duration = _ref$duration === void 0 ? 2500 : _ref$duration,
+      duration = _ref$duration === void 0 ? 2000 : _ref$duration,
       center = _ref.center,
       iconClass = _ref.iconClass,
       showClose = _ref.showClose,

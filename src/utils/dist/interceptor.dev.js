@@ -30,6 +30,9 @@ service.interceptors.request.use(function (config) {
   /**
    * 添加请求头参数
    */
+  config.data = Object.assign({}, config.data, {
+    authToken: 'authToken'
+  });
   return config;
 }, function (error) {
   return Promise.reject(error);
@@ -42,12 +45,14 @@ service.interceptors.response.use(function (config) {
   // 对响应数据做点什么
   var data = config.data;
 
-  if (data.code !== 200) {
+  if (data.code !== 200 || !!data.errMsg) {
     _elementUi.Message.error({
       message: data.errMsg,
       duration: 2500,
       type: 'error',
-      onClose: function onClose() {}
+      onClose: function onClose() {
+        console.log(data);
+      }
     });
 
     return Promise.reject(data);

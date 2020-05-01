@@ -66,6 +66,12 @@ _vue["default"].config.productionTip = false;
  */
 
 _vue["default"].use(_compositionApi["default"]);
+/**
+ * 注入自定义全局方法
+ */
+// import _global from './utils/global';
+// Vue.use(_global);
+
 
 new _vue["default"]({
   router: _router["default"],

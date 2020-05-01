@@ -5,7 +5,32 @@ $--color-primary: red !default;
 $--font-path: '~element-ui/lib/theme-chalk/fonts'; // 需要注意的是，覆盖字体路径变量是必需的，将其赋值为 Element 中 icon 图标所在的相对路径即可
 
 // 按需加载 scss 样式文件
-@import '~element-ui/packages/theme-chalk/src/base.scss';
-@import '~element-ui/packages/theme-chalk/src/button.scss';
-@import '~element-ui/packages/theme-chalk/src/form.scss';
-@import '~element-ui/packages/theme-chalk/src/icon.scss';
+// @import '~element-ui/packages/theme-chalk/src/base.scss';
+// @import '~element-ui/packages/theme-chalk/src/button.scss';
+// @import '~element-ui/packages/theme-chalk/src/form.scss';
+// @import '~element-ui/packages/theme-chalk/src/form-item.scss';
+// @import '~element-ui/packages/theme-chalk/src/icon.scss';
+// @import '~element-ui/packages/theme-chalk/src/select.scss';
+// @import '~element-ui/packages/theme-chalk/src/option.scss';
+// @import '~element-ui/packages/theme-chalk/src/col.scss';
+// @import '~element-ui/packages/theme-chalk/src/row.scss';
+// @import '~element-ui/packages/theme-chalk/src/avatar.scss';
+// @import '~element-ui/packages/theme-chalk/src/menu.scss';
+// @import '~element-ui/packages/theme-chalk/src/menu-item.scss';
+// @import '~element-ui/packages/theme-chalk/src/submenu.scss';
+// @import '~element-ui/packages/theme-chalk/src/input.scss';
+// @import '~element-ui/packages/theme-chalk/src/date-picker.scss';
+// @import '~element-ui/packages/theme-chalk/src/table.scss';
+// @import '~element-ui/packages/theme-chalk/src/table-column.scss';
+// @import '~element-ui/packages/theme-chalk/src/pagination.scss';
+// @import '~element-ui/packages/theme-chalk/src/dialog.scss';
+// @import '~element-ui/packages/theme-chalk/src/message.scss';
+// @import '~element-ui/packages/theme-chalk/src/message-box.scss';
+// @import '~element-ui/packages/theme-chalk/src/divider.scss';
+// @import '~element-ui/packages/theme-chalk/src/loading.scss';
+// @import '~element-ui/packages/theme-chalk/src/radio-group.scss';
+// @import '~element-ui/packages/theme-chalk/src/radio.scss';
+// @import '~element-ui/packages/theme-chalk/src/switch.scss';
+// @import '~element-ui/packages/theme-chalk/src/checkbox-group.scss';
+// @import '~element-ui/packages/theme-chalk/src/checkbox.scss';
+// @import '~element-ui/packages/theme-chalk/src/time-picker.scss';

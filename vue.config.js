@@ -37,6 +37,7 @@ module.exports = {
         public: path.resolve(__dirname, './public'),
       },
     };
+    config.devtool = process.env.NODE_ENV === 'production' ? 'cheap-module-source-map' : 'cheap-module-eval-source-map';
   },
   // 生产环境是否生成 sourceMap 文件
   productionSourceMap: false, // 默认 true, 使用 false 加速生产环境构建

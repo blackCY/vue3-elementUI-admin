@@ -1,13 +1,13 @@
+@import './element-variables.scss';
 @import './config.scss';
 @import './element.scss';
 // 自定义主题
-@import './element-variables.scss';
 @import './normalize.scss';
 
 // 全局样式类名
-.pull-left {
-  float: left;
+/deep/.pull-left {
+  float: left !important;
 }
-.pull-right {
-  float: right;
+/deep/.pull-right {
+  float: right !important;
 }

@@ -13,6 +13,17 @@ import {
   Icon,
   Avatar,
   Popconfirm,
+  Option,
+  Select,
+  DatePicker,
+  Table,
+  TableColumn,
+  Pagination,
+  Dialog,
+  MessageBox,
+  Divider,
+  Loading,
+  TimePicker,
 } from 'element-ui';
 import Vue from 'vue';
 
@@ -29,5 +40,23 @@ Vue.use(MenuItemGroup);
 Vue.use(Icon);
 Vue.use(Avatar);
 Vue.use(Popconfirm);
+Vue.use(Option);
+Vue.use(Select);
+Vue.use(DatePicker);
+Vue.use(Table);
+Vue.use(TableColumn);
+Vue.use(Pagination);
+Vue.use(Dialog);
+Vue.use(Divider);
+Vue.use(Loading.directive);
+Vue.use(TimePicker);
+// Vue.use(Radio);
+// Vue.use(RadioGroup);
+// Vue.use(Switch);
+// Vue.use(Checkbox);
+// Vue.use(CheckboxGroup);
 
+Vue.prototype.$loading = Loading.service;
 Vue.prototype.$message = Message;
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$confirm = MessageBox.confirm;

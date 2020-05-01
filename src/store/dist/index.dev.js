@@ -13,6 +13,8 @@ var _collapse = _interopRequireDefault(require("./modules/collapse"));
 
 var _login = _interopRequireDefault(require("./modules/login"));
 
+var _info = _interopRequireDefault(require("./modules/info"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 _vue["default"].use(_vuex["default"]);
@@ -20,7 +22,8 @@ _vue["default"].use(_vuex["default"]);
 var store = new _vuex["default"].Store({
   modules: {
     login: _login["default"],
-    collapse: _collapse["default"]
+    collapse: _collapse["default"],
+    info: _info["default"]
   }
 });
 /**
@@ -31,17 +34,20 @@ var store = new _vuex["default"].Store({
 
 if (module.hot) {
   // 使 action 和 muation 成为可热重载模块
-  module.hot.accept(['./modules/collapse.js', './modules/login.js'], function () {
+  module.hot.accept(['./modules/collapse.js', './modules/login.js', './modules/info.js'], function () {
     // 获取更新后的模块
     // 因为 babel 6 的模块编译格式问题, 这里需要加上 `.default`
     var newCollapse = require('./modules/collapse')["default"];
 
-    var newLogin = require('./modules/login')["default"]; // 加载新模块
+    var newLogin = require('./modules/login')["default"];
+
+    var newInfo = require('./modules/info')["default"]; // 加载新模块
 
 
     store.hotUpdate({
-      login: _login["default"],
-      collapse: _collapse["default"]
+      newCollapse: newCollapse,
+      newLogin: newLogin,
+      newInfo: newInfo
     });
   });
 }

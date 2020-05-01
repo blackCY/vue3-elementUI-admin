@@ -1,15 +1,80 @@
-.el-submenu .el-menu-item {
-  font-size: 14px;
-  padding-left: 50px !important;
-  // .is-active 是 .el-menu-item 的兄弟节点
-  &.is-active {
+/deep/#header-wrap {
+  z-index: 999 !important;
+}
+
+/deep/.el-submenu {
+  .el-menu-item {
+    font-size: 14px !important;
+    padding-left: 50px !important;
+    // .is-active 是 .el-menu-item 的兄弟节点
+    &.is-active {
+      background-color: $--color-bgc !important;
+    }
+  }
+}
+
+/deep/.close {
+  .el-submenu {
+    &.is-opened {
+      > .el-submenu__title {
+        background-color: $--color-bgc !important;
+      }
+    }
+  }
+}
+
+/deep/.el-menu--vertical {
+  .el-menu {
+    background-color: $--color-bgc !important;
+  }
+  .el-menu-item {
+    line-height: 56px !important;
+  }
+  .el-menu-item:hover {
     background-color: $--color-bgc !important;
   }
 }
 
+/* table 样式*/
+/deep/div.el-table {
+  td,
+  th {
+    text-align: center !important;
+  }
+  th {
+    font-weight: bold !important;
+    color: #344a5f !important;
+  }
+  td {
+    font-size: 14px !important;
+  }
+}
+
 // 修改一级菜单样式
-.el-submenu {
+/deep/.el-submenu {
   &.is-active.is-opened .el-submenu__title {
     background-color: #a3ccf5 !important;
   }
+}
+
+/deep/.el-dialog__body {
+  padding: 30px 47px !important;
+}
+
+/deep/.el-dialog__footer {
+  text-align: center !important;
+  padding-bottom: 50px !important;
+  .el-button {
+    width: 90px !important;
+    margin: 0 11px !important;
+  }
+}
+/deep/.el-form {
+  .el-form-item:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/deep/div.el-form-item {
+  margin-bottom: 22px;
 }

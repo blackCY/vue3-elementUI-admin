@@ -70,6 +70,15 @@ const routes = [
         },
         component: () => import('@views/Info/Category'),
       },
+      {
+        path: '/info/infoDetail/:currentTotal/:infoID',
+        name: 'infoDetail',
+        meta: {
+          name: '信息详情',
+        },
+        hidden: true,
+        component: () => import('@views/Info/infoDetail'),
+      },
     ],
   },
   /**

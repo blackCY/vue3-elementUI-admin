@@ -32,4 +32,32 @@ _vue["default"].use(_elementUi.Avatar);
 
 _vue["default"].use(_elementUi.Popconfirm);
 
+_vue["default"].use(_elementUi.Option);
+
+_vue["default"].use(_elementUi.Select);
+
+_vue["default"].use(_elementUi.DatePicker);
+
+_vue["default"].use(_elementUi.Table);
+
+_vue["default"].use(_elementUi.TableColumn);
+
+_vue["default"].use(_elementUi.Pagination);
+
+_vue["default"].use(_elementUi.Dialog);
+
+_vue["default"].use(_elementUi.Divider);
+
+_vue["default"].use(_elementUi.Loading.directive);
+
+_vue["default"].use(_elementUi.TimePicker); // Vue.use(Radio);
+// Vue.use(RadioGroup);
+// Vue.use(Switch);
+// Vue.use(Checkbox);
+// Vue.use(CheckboxGroup);
+
+
+_vue["default"].prototype.$loading = _elementUi.Loading.service;
 _vue["default"].prototype.$message = _elementUi.Message;
+_vue["default"].prototype.$msgbox = _elementUi.MessageBox;
+_vue["default"].prototype.$confirm = _elementUi.MessageBox.confirm;
